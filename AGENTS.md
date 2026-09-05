@@ -12,7 +12,7 @@ solution, makefile or CMake file exists, and the code needs DirectX 8 and the Xb
 this laptop. It is reference material, read and cited, never run.
 
 Remotes: `origin` is `dlprentice/Onslaught` (branch `main`, the only branch), `upstream` is
-`stuart73/Onslaught`. As of 2026-09-04 the fork is identical to `upstream/main`; every commit is Stuart's.
+`stuart73/Onslaught`. The fork is `upstream/main` plus this guide and `CLAUDE.md`; every source commit is Stuart's.
 
 ## How it is used
 
