@@ -21,13 +21,14 @@ at `5352a81`. That repo treats it as its `SOURCE` evidence tier: its docs, C# re
 `references/Onslaught/<file>:<line>` (see `DOCUMENTATION.md`, `rebuild/PARITY.md`, `rebuild/PROVENANCE.md`,
 `patches/catalog/patches.v2.json`), `tools/aya_extractor_source_audit.py` refuses to run unless the submodule
 is at its `ONSLAUGHT_PIN`, and `npm run test:safety` scans the submodule files. Its `CONTRIBUTING.md` says to
-keep the pin unless a source-reference update is separately authorised.
+keep the pin unless the authorized task includes that source-reference update. An instruction-only edit
+to this standalone fork does not require advancing the consuming project's pinned source snapshot.
 
 ## Rules
 
 - Treat this as upstream code. No reformatting, renaming, translating or "fixing": line numbers are
   load-bearing citations in the editor repo.
-- A change that is genuinely needed goes on this fork's `main` and is pushed to `origin`. Then, in
+- A source-reference change that the authorized task requires goes on this fork's `main` and is pushed to `origin`. Then, in
   Onslaught-Career-Editor, check out the new commit inside `references/Onslaught`, commit the pointer, update
   `ONSLAUGHT_PIN` in `tools/aya_extractor_source_audit.py`, and re-run that audit and `npm run test:safety`.
 - Never rewrite history here: the submodule pin must always resolve. Take upstream changes with
