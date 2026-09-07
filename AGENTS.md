@@ -11,7 +11,7 @@ sample framework) and the Xbox layer (`XBoxMemoryCard.cpp`, `_XBOX` blocks). The
 solution, makefile or CMake file exists, and the code needs DirectX 8 and the Xbox SDK, so it is not built on
 this laptop. It is reference material, read and cited, never run.
 
-Remotes: `origin` is `dlprentice/Onslaught` (branch `main`, the only branch), `upstream` is
+Remotes: `origin` is `dlprentice/Onslaught` (default branch `main`), `upstream` is
 `stuart73/Onslaught`. The fork is `upstream/main` plus this guide and `CLAUDE.md`; every source commit is Stuart's.
 
 ## How it is used
@@ -28,9 +28,12 @@ to this standalone fork does not require advancing the consuming project's pinne
 
 - Treat this as upstream code. No reformatting, renaming, translating or "fixing": line numbers are
   load-bearing citations in the editor repo.
-- A source-reference change that the authorized task requires goes on this fork's `main` and is pushed to `origin`. Then, in
-  Onslaught-Career-Editor, check out the new commit inside `references/Onslaught`, commit the pointer, update
-  `ONSLAUGHT_PIN` in `tools/aya_extractor_source_audit.py`, and re-run that audit and `npm run test:safety`.
+- Useful feature branches and repo-local worktrees are allowed. Push small verified changes to the existing
+  origin; do not force-push. An instruction-only change does not advance a consuming source pin.
+- If the authorized task also adopts changed source in Onslaught-Career-Editor, update its
+  `references/Onslaught` pointer and `ONSLAUGHT_PIN` in `tools/aya_extractor_source_audit.py`, then run
+  that audit and `npm run test:safety`. Coordinate adoption with the consuming repository's owner;
+  a standalone fork edit does not authorize changing the consumer.
 - Never rewrite history here: the submodule pin must always resolve. Take upstream changes with
   `git fetch upstream` and a merge of `upstream/main` into `main`, not a rebase.
 - Keep `LICENSE` and provenance intact; nothing from this tree is copied into the MIT-licensed parts of the
