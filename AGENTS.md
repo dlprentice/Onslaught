@@ -21,8 +21,8 @@ Remotes: `origin` is `dlprentice/Onslaught` (default branch `main`), `upstream` 
 `~/Projects/game-dev/Onslaught-Career-Editor` vendors this fork as the submodule `references/Onslaught`, pinned
 at an exact commit recorded by the consuming repository's Git link. That repo treats it as its
 `SOURCE` evidence tier: its docs, C# rebuild and tests cite
-`references/Onslaught/<file>:<line>` (see `DOCUMENTATION.md`, `rebuild/PARITY.md`, `rebuild/PROVENANCE.md`,
-`patches/catalog/patches.v2.json`), `tools/aya_extractor_source_audit.py` refuses to run unless the submodule
+`references/Onslaught/<file>:<line>` (see `DOCUMENTATION.md`, `rebuild/PARITY.md`, `rebuild/PROVENANCE.md`),
+`tools/aya_extractor_source_audit.py` refuses to run unless the submodule
 is at its `ONSLAUGHT_PIN`, and `npm run test:safety` scans the submodule files. Its `CONTRIBUTING.md` says to
 keep the pin unless the authorized task includes that source-reference update. An instruction-only edit
 to this standalone fork does not require advancing the consuming project's pinned source snapshot.
